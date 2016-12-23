@@ -1,0 +1,46 @@
+meta-fusion
+===========
+
+This layer provides Xen VMs configurations PV drivers & extra packages
+necessary to build and run guest domains on FUSION system.
+
+
+Dependencies
+------------
+
+This layer depends on:
+
+URI: git://git.openembedded.org/meta-openembedded.git
+branch: master
+
+URI: git://git.yoctoproject.org/poky.git
+branch: master
+
+URI: git://git.linaro.org/openembedded/meta-linaro.git
+branch: master
+
+URI: git://git.yoctoproject.org/meta-selinux.git
+branch: master
+
+URI: git://github.com/mem/oe-meta-go.git
+branch: master
+
+URI: git://git.yoctoproject.org/meta-virtualization.git
+branch: master
+
+Maintenance
+-----------
+
+Send pull requests, patches, comments or questions to
+<embedded-pv-devel@lists.xenproject.org>
+
+Maintainers: Andrii Anisov <andrii_anisov@epam.com>
+             Artem Mygaiev <artem_mygaiev@epam.com>
+
+License
+-------
+
+All metadata is MIT licensed unless otherwise stated. Source code included
+in tree for individual recipes is under the LICENSE stated in each recipe
+(.bb file) unless otherwise stated.
+
