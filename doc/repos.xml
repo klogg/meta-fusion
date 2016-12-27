@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="github" fetch="ssh://git@github.com" />
+    <remote name="yoctoproject" fetch="git://git.yoctoproject.org" />
+    <remote name="openembedded" fetch="git://git.openembedded.org" />
+    <remote name="linaro" fetch="git://git.linaro.org" />
+
+    <default remote="github" sync-j="10" sync-c="true" />
+
+    <!-- Core OE & Yocto packages [morty] -->
+    <project remote="openembedded" name="meta-openembedded" path="meta-openembedded" upstream="morty" revision="morty" />
+    <project remote="yoctoproject" name="poky" path="yocto" upstream="morty" revision="morty" />
+    <!-- Linaro ARM packages (not sure if needed at all) [morty] -->
+    <project remote="linaro" name="openembedded/meta-linaro" path="meta-linaro" upstream="morty" revision="morty" />
+    <!-- SELinux packages needed for Xen Security Policies -->
+    <project remote="yoctoproject" name="meta-selinux" path="meta-selinux" upstream="master" revision="master" />
+    <!-- Go language layer needed for Docker -->
+    <project name="mem/oe-meta-go" path="meta-go" upstream="master" revision="master" />
+    <!-- Xen & Docker support layers [morty] -->
+    <project remote="yoctoproject" name="meta-virtualization" path="meta-virtualization" upstream="morty" revision="morty" />
+
+    <!-- Xen VMs confirations, PV drivers & extra packages -->
+    <project name="xen-troops/meta-fusion" path="meta-fusion" upstream="master" revision="master" />
+</manifest>
