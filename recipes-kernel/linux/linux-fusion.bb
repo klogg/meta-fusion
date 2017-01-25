@@ -11,13 +11,13 @@ python () {
         raise bb.parse.SkipPackage("Set PREFERRED_PROVIDER_virtual/kernel to linux-fusion to enable it")
 }
 
-SRCREV_machine ?= "8bba2e2e62cbf2db0d03e4de1204f7850bc45c44"
+SRCREV_machine ?= "13e7680774d9103bb2685635238bcf577a52ff96"
 SRCREV_meta ?= "83110d94edeb856a3667b62903ed4ae91c24117d"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;protocol=http;name=machine;nobranch=1; \
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/horms/renesas-bsp.git;protocol=http;name=machine;branch=v4.9/rcar-3.5.1; \
            git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-4.8;destsuffix=${KMETA}"
 
-LINUX_VERSION ?= "4.8.15"
+LINUX_VERSION ?= "4.9.0"
 
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
