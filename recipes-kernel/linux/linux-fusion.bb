@@ -14,18 +14,20 @@ python () {
 
 # 4.9.6 tag from LTS linux 4.9.y
 SRCREV_machine ?= "09f886dc5a6945679ed35e6acfbc746f472f0f34"
-SRCREV_meta ?= "f17d4c71e77f991352158afc784456efd9bbf6af"
 
 KMETA = "kernel-meta"
-KCONF_BSP_AUDIT_LEVEL = "2"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;protocol=http;name=machine;branch=linux-4.9.y; \
-           git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-4.9;destsuffix=${KMETA}"
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;protocol=http;name=machine;branch=linux-4.9.y"
 
 LINUX_VERSION ?= "4.9.6"
+LINUX_VERSION_EXTENSION_append = "-custom"
 
 LINUX_KERNEL_TYPE = "tiny"
 
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 COMPATIBLE_MACHINE = "xenaarch64"
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+SRC_URI += "file://defconfig"
+
