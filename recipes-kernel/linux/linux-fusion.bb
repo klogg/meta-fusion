@@ -12,14 +12,14 @@ python () {
         raise bb.parse.SkipPackage("Set PREFERRED_PROVIDER_virtual/kernel to linux-fusion to enable it")
 }
 
-# 4.13.3 tag from LTS linux 4.13.y
-SRCREV_machine ?= "56b9b16136e23ed57e81f40697b6d781e693d061"
+# 4.14.1 tag from
+SRCREV_machine ?= "780a781dd6f1af9dfac15b8eeba1cb678c9fc380"
 
 KMETA = "kernel-meta"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;protocol=http;name=machine;branch=linux-4.13.y"
+SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;protocol=http;name=machine;branch=linux-4.14.y"
 
-LINUX_VERSION ?= "4.13.3"
+LINUX_VERSION ?= "4.14.1"
 LINUX_VERSION_EXTENSION_append = "-custom"
 
 LINUX_KERNEL_TYPE = "tiny"
